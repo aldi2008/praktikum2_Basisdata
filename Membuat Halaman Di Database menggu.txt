@@ -1,0 +1,31 @@
+// Membuat Halaman Di Database menggunakan command prompt
+cd \xampp\mysql\bin
+mysql -u root -p
+
+// jika sudah membuat file database lanjut ketik berikut
+
+show databases;
+
+//jika sudah muncul table lanjut ketik berikut
+
+use "ketik nama database yang dibuat";
+
+contoh use ti05;
+
+// jika belum membuat database ketik "CREATE DATABASES";
+
+// lanjut membuat table didalam database
+
+MariaDB [ti05]> CREATE TABLE jabatan(
+    -> id int primary key NOT NULL auto_increment,
+    -> nama varchar(30) NOT NULL unique);
+
+// membuat nama didalam table yang sudah dibuat
+
+MariaDB [ti05]> CREATE TABLE pegawai(
+    -> id int primary key NOT NULL auto_increment,
+    -> nip varchar(30) NOT NULL unique,
+    -> nama varchar(30) NOT NULL,
+    -> email varchar(30),
+    -> tgl_lahir Date,
+    -> jabatan_id int not null REFERENCES jabatanid));
